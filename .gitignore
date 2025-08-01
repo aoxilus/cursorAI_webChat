@@ -1,0 +1,91 @@
+# Build artifacts
+*.exe
+*.obj
+*.o
+*.a
+*.lib
+*.dll
+*.so
+*.dylib
+
+# Generated files
+generated_code.*
+capture_*.bmp
+screenshot_*.png
+screenshot_*.jpg
+*.log
+*.tmp
+
+# System files
+Thumbs.db
+.DS_Store
+*.swp
+*.swo
+*~
+*.bak
+
+# Temporary directories
+temp/
+tmp/
+build/
+dist/
+node_modules/
+
+# VS Code temporary files
+.vscode/*.log
+.vscode/ipch/
+.vscode/browse.vc.db*
+
+# Backup directories
+backup/
+
+# IDE files
+.vs/
+*.vcxproj.user
+*.vcxproj.filters
+
+# OS generated files
+.DS_Store
+.DS_Store?
+._*
+.Spotlight-V100
+.Trashes
+ehthumbs.db
+Thumbs.db
+
+# PowerShell
+*.ps1.log
+
+# Compiler specific
+*.gch
+*.pch
+
+# Debug files
+*.pdb
+*.ilk
+*.exp
+
+# Release files
+*.exe
+*.dll
+*.so
+*.dylib
+
+# Documentation build
+docs/_build/
+
+# Environment files
+.env
+.env.local
+.env.*.local
+
+# Package files
+*.zip
+*.tar.gz
+*.rar
+
+# Large files
+*.iso
+*.img
+*.vhd
+*.vmdk

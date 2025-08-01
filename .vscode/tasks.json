@@ -1,0 +1,243 @@
+{
+	"version": "2.0.0",
+	"tasks": [
+		{
+			"label": "🔄 Compilar Todo",
+			"type": "shell",
+			"command": "powershell.exe",
+			"args": [
+				"-ExecutionPolicy", "Bypass",
+				"-Command",
+				"& { $ErrorActionPreference = 'Stop'; Write-Host '🚀 Compilando módulos...' -ForegroundColor Cyan; .\\build.bat; if ($LASTEXITCODE -eq 0) { Write-Host '✅ Compilación exitosa!' -ForegroundColor Green } else { Write-Host '❌ Error en compilación' -ForegroundColor Red; exit 1 } }"
+			],
+			"group": {
+				"kind": "build",
+				"isDefault": true
+			},
+			"presentation": {
+				"echo": true,
+				"reveal": "always",
+				"focus": false,
+				"panel": "shared",
+				"showReuseMessage": true,
+				"clear": false
+			},
+			"problemMatcher": [
+				"$gcc"
+			],
+			"options": {
+				"timeout": 30000
+			},
+			"runOptions": {
+				"runOn": "default"
+			}
+		},
+		{
+			"label": "⚡ Compilar Rápido",
+			"type": "shell",
+			"command": "powershell.exe",
+			"args": [
+				"-ExecutionPolicy", "Bypass",
+				"-Command",
+				"& { $ErrorActionPreference = 'Stop'; Write-Host '⚡ Compilación rápida...' -ForegroundColor Yellow; g++ -o memory_monitor.exe memory_monitor.cpp -lgdi32 -luser32 -lpsapi -O2; g++ -o gui_capture.exe gui_capture.cpp -lgdi32 -luser32 -lpsapi -O2; g++ -o chatgpt_automation.exe chatgpt_automation.cpp -lgdi32 -luser32 -lole32 -loleaut32 -lpsapi -O2; if ($LASTEXITCODE -eq 0) { Write-Host '✅ Compilación rápida completada!' -ForegroundColor Green } else { Write-Host '❌ Error en compilación rápida' -ForegroundColor Red } }"
+			],
+			"group": "build",
+			"presentation": {
+				"echo": true,
+				"reveal": "silent",
+				"focus": false,
+				"panel": "shared",
+				"showReuseMessage": true,
+				"clear": false
+			},
+			"problemMatcher": [
+				"$gcc"
+			],
+			"options": {
+				"timeout": 15000
+			},
+			"runOptions": {
+				"runOn": "default"
+			}
+		},
+		{
+			"label": "🧹 Limpiar",
+			"type": "shell",
+			"command": "powershell.exe",
+			"args": [
+				"-ExecutionPolicy", "Bypass",
+				"-Command",
+				"& { Write-Host '🧹 Limpiando archivos...' -ForegroundColor Yellow; Remove-Item -Path '*.exe' -Force -ErrorAction SilentlyContinue; Remove-Item -Path 'generated_code.*' -Force -ErrorAction SilentlyContinue; Remove-Item -Path 'capture_*.bmp' -Force -ErrorAction SilentlyContinue; Write-Host '✅ Limpieza completada!' -ForegroundColor Green }"
+			],
+			"group": "build",
+			"presentation": {
+				"echo": true,
+				"reveal": "silent",
+				"focus": false,
+				"panel": "shared",
+				"showReuseMessage": true,
+				"clear": false
+			},
+			"options": {
+				"timeout": 10000
+			}
+		},
+		{
+			"label": "📊 Monitorear Memoria",
+			"type": "shell",
+			"command": "powershell.exe",
+			"args": [
+				"-ExecutionPolicy", "Bypass",
+				"-Command",
+				"& { Write-Host '📊 Iniciando monitoreo de memoria...' -ForegroundColor Cyan; .\\memory_monitor.exe memory }"
+			],
+			"group": "test",
+			"presentation": {
+				"echo": true,
+				"reveal": "always",
+				"focus": false,
+				"panel": "shared",
+				"showReuseMessage": true,
+				"clear": false
+			},
+			"options": {
+				"timeout": 10000
+			}
+		},
+		{
+			"label": "🖼️ Capturar GUI",
+			"type": "shell",
+			"command": "powershell.exe",
+			"args": [
+				"-ExecutionPolicy", "Bypass",
+				"-Command",
+				"& { Write-Host '🖼️ Iniciando captura GUI...' -ForegroundColor Cyan; .\\gui_capture.exe list }"
+			],
+			"group": "test",
+			"presentation": {
+				"echo": true,
+				"reveal": "always",
+				"focus": false,
+				"panel": "shared",
+				"showReuseMessage": true,
+				"clear": false
+			},
+			"options": {
+				"timeout": 10000
+			}
+		},
+		{
+			"label": "🤖 ChatGPT Demo",
+			"type": "shell",
+			"command": "powershell.exe",
+			"args": [
+				"-ExecutionPolicy", "Bypass",
+				"-Command",
+				"& { Write-Host '🤖 Iniciando ChatGPT Demo...' -ForegroundColor Magenta; .\\chatgpt_demo.ps1 demo }"
+			],
+			"group": "test",
+			"presentation": {
+				"echo": true,
+				"reveal": "always",
+				"focus": false,
+				"panel": "shared",
+				"showReuseMessage": true,
+				"clear": false
+			},
+			"options": {
+				"timeout": 30000
+			}
+		},
+		{
+			"label": "🌐 ChatGPT Web",
+			"type": "shell",
+			"command": "powershell.exe",
+			"args": [
+				"-ExecutionPolicy", "Bypass",
+				"-Command",
+				"& { Write-Host '🌐 Iniciando ChatGPT Web...' -ForegroundColor Cyan; .\\chatgpt_web_automation.ps1 -Command interactive }"
+			],
+			"group": "test",
+			"presentation": {
+				"echo": true,
+				"reveal": "always",
+				"focus": false,
+				"panel": "shared",
+				"showReuseMessage": true,
+				"clear": false
+			},
+			"options": {
+				"timeout": 60000
+			}
+		},
+		{
+			"label": "🔧 Compilar C++ Individual",
+			"type": "shell",
+			"command": "powershell.exe",
+			"args": [
+				"-ExecutionPolicy", "Bypass",
+				"-Command",
+				"& { param($file); if (-not $file) { Write-Host '❌ Especifica un archivo .cpp' -ForegroundColor Red; exit 1 }; $exe = $file -replace '\\.cpp$', '.exe'; Write-Host \"🔧 Compilando $file...\" -ForegroundColor Cyan; g++ -o $exe $file -lgdi32 -luser32 -lpsapi -O2; if ($LASTEXITCODE -eq 0) { Write-Host \"✅ $exe compilado exitosamente!\" -ForegroundColor Green } else { Write-Host \"❌ Error compilando $file\" -ForegroundColor Red } }"
+			],
+			"group": "build",
+			"presentation": {
+				"echo": true,
+				"reveal": "always",
+				"focus": false,
+				"panel": "shared",
+				"showReuseMessage": true,
+				"clear": false
+			},
+			"problemMatcher": [
+				"$gcc"
+			],
+			"options": {
+				"timeout": 20000
+			}
+		},
+		{
+			"label": "📝 Ejecutar PowerShell",
+			"type": "shell",
+			"command": "powershell.exe",
+			"args": [
+				"-ExecutionPolicy", "Bypass",
+				"-Command",
+				"& { param($file); if (-not $file) { Write-Host '❌ Especifica un archivo .ps1' -ForegroundColor Red; exit 1 }; Write-Host \"📝 Ejecutando $file...\" -ForegroundColor Cyan; & $file }"
+			],
+			"group": "test",
+			"presentation": {
+				"echo": true,
+				"reveal": "always",
+				"focus": false,
+				"panel": "shared",
+				"showReuseMessage": true,
+				"clear": false
+			},
+			"options": {
+				"timeout": 30000
+			}
+		},
+		{
+			"label": "🚀 Ejecutar Todo",
+			"type": "shell",
+			"command": "powershell.exe",
+			"args": [
+				"-ExecutionPolicy", "Bypass",
+				"-Command",
+				"& { Write-Host '🚀 Ejecutando sistema completo...' -ForegroundColor Magenta; Write-Host '1️⃣ Compilando...' -ForegroundColor Yellow; .\\build.bat; if ($LASTEXITCODE -eq 0) { Write-Host '2️⃣ Monitoreando memoria...' -ForegroundColor Yellow; .\\memory_monitor.exe memory; Write-Host '3️⃣ Capturando GUI...' -ForegroundColor Yellow; .\\gui_capture.exe list; Write-Host '4️⃣ Demo ChatGPT...' -ForegroundColor Yellow; .\\chatgpt_demo.ps1 demo; Write-Host '✅ Sistema completo ejecutado!' -ForegroundColor Green } else { Write-Host '❌ Error en compilación' -ForegroundColor Red } }"
+			],
+			"group": "test",
+			"presentation": {
+				"echo": true,
+				"reveal": "always",
+				"focus": false,
+				"panel": "shared",
+				"showReuseMessage": true,
+				"clear": false
+			},
+			"options": {
+				"timeout": 120000
+			}
+		}
+	]
+}

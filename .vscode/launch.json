@@ -1,0 +1,185 @@
+{
+	"version": "0.2.0",
+	"configurations": [
+		{
+			"name": "🔧 Debug Memory Monitor",
+			"type": "cppdbg",
+			"request": "launch",
+			"program": "${workspaceFolder}/memory_monitor.exe",
+			"args": ["memory"],
+			"stopAtEntry": false,
+			"cwd": "${workspaceFolder}",
+			"environment": [],
+			"externalConsole": true,
+			"MIMode": "gdb",
+			"miDebuggerPath": "C:\\msys64\\mingw64\\bin\\gdb.exe",
+			"setupCommands": [
+				{
+					"description": "Enable pretty-printing for gdb",
+					"text": "-enable-pretty-printing",
+					"ignoreFailures": true
+				}
+			],
+			"preLaunchTask": "⚡ Compilar Rápido",
+			"timeout": 30000,
+			"console": "integratedTerminal"
+		},
+		{
+			"name": "🖼️ Debug GUI Capture",
+			"type": "cppdbg",
+			"request": "launch",
+			"program": "${workspaceFolder}/gui_capture.exe",
+			"args": ["list"],
+			"stopAtEntry": false,
+			"cwd": "${workspaceFolder}",
+			"environment": [],
+			"externalConsole": true,
+			"MIMode": "gdb",
+			"miDebuggerPath": "C:\\msys64\\mingw64\\bin\\gdb.exe",
+			"setupCommands": [
+				{
+					"description": "Enable pretty-printing for gdb",
+					"text": "-enable-pretty-printing",
+					"ignoreFailures": true
+				}
+			],
+			"preLaunchTask": "⚡ Compilar Rápido",
+			"timeout": 30000,
+			"console": "integratedTerminal"
+		},
+		{
+			"name": "🤖 Debug ChatGPT Automation",
+			"type": "cppdbg",
+			"request": "launch",
+			"program": "${workspaceFolder}/chatgpt_automation.exe",
+			"args": ["interactive"],
+			"stopAtEntry": false,
+			"cwd": "${workspaceFolder}",
+			"environment": [],
+			"externalConsole": true,
+			"MIMode": "gdb",
+			"miDebuggerPath": "C:\\msys64\\mingw64\\bin\\gdb.exe",
+			"setupCommands": [
+				{
+					"description": "Enable pretty-printing for gdb",
+					"text": "-enable-pretty-printing",
+					"ignoreFailures": true
+				}
+			],
+			"preLaunchTask": "⚡ Compilar Rápido",
+			"timeout": 60000,
+			"console": "integratedTerminal"
+		},
+		{
+			"name": "📝 Debug PowerShell Script",
+			"type": "PowerShell",
+			"request": "launch",
+			"script": "${workspaceFolder}/monitor.ps1",
+			"args": [],
+			"cwd": "${workspaceFolder}",
+			"console": "integratedTerminal",
+			"timeout": 30000,
+			"stopOnEntry": false
+		},
+		{
+			"name": "🌐 Debug ChatGPT Web",
+			"type": "PowerShell",
+			"request": "launch",
+			"script": "${workspaceFolder}/chatgpt_web_automation.ps1",
+			"args": ["-Command", "interactive"],
+			"cwd": "${workspaceFolder}",
+			"console": "integratedTerminal",
+			"timeout": 60000,
+			"stopOnEntry": false
+		},
+		{
+			"name": "🤖 Debug ChatGPT Demo",
+			"type": "PowerShell",
+			"request": "launch",
+			"script": "${workspaceFolder}/chatgpt_demo.ps1",
+			"args": ["demo"],
+			"cwd": "${workspaceFolder}",
+			"console": "integratedTerminal",
+			"timeout": 30000,
+			"stopOnEntry": false
+		},
+		{
+			"name": "🚀 Debug Sistema Completo",
+			"type": "PowerShell",
+			"request": "launch",
+			"script": "${workspaceFolder}/monitor.ps1",
+			"args": [],
+			"cwd": "${workspaceFolder}",
+			"console": "integratedTerminal",
+			"timeout": 120000,
+			"stopOnEntry": false,
+			"preLaunchTask": "🔄 Compilar Todo"
+		},
+		{
+			"name": "🔍 Debug Individual C++",
+			"type": "cppdbg",
+			"request": "launch",
+			"program": "${workspaceFolder}/${fileBasenameNoExtension}.exe",
+			"args": [],
+			"stopAtEntry": false,
+			"cwd": "${workspaceFolder}",
+			"environment": [],
+			"externalConsole": true,
+			"MIMode": "gdb",
+			"miDebuggerPath": "C:\\msys64\\mingw64\\bin\\gdb.exe",
+			"setupCommands": [
+				{
+					"description": "Enable pretty-printing for gdb",
+					"text": "-enable-pretty-printing",
+					"ignoreFailures": true
+				}
+			],
+			"timeout": 30000,
+			"console": "integratedTerminal"
+		},
+		{
+			"name": "⚡ Debug Rápido",
+			"type": "cppdbg",
+			"request": "launch",
+			"program": "${workspaceFolder}/memory_monitor.exe",
+			"args": ["memory"],
+			"stopAtEntry": false,
+			"cwd": "${workspaceFolder}",
+			"environment": [],
+			"externalConsole": false,
+			"MIMode": "gdb",
+			"miDebuggerPath": "C:\\msys64\\mingw64\\bin\\gdb.exe",
+			"setupCommands": [
+				{
+					"description": "Enable pretty-printing for gdb",
+					"text": "-enable-pretty-printing",
+					"ignoreFailures": true
+				}
+			],
+			"preLaunchTask": "⚡ Compilar Rápido",
+			"timeout": 15000,
+			"console": "integratedTerminal"
+		}
+	],
+	"compounds": [
+		{
+			"name": "🔧 Debug C++ Modules",
+			"configurations": [
+				"🔧 Debug Memory Monitor",
+				"🖼️ Debug GUI Capture"
+			],
+			"stopAll": true,
+			"timeout": 60000
+		},
+		{
+			"name": "🚀 Debug Todo",
+			"configurations": [
+				"🔧 Debug Memory Monitor",
+				"🖼️ Debug GUI Capture",
+				"🤖 Debug ChatGPT Demo"
+			],
+			"stopAll": true,
+			"timeout": 120000
+		}
+	]
+}
