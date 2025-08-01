@@ -1,359 +1,355 @@
-# 🚀 Sistema de Monitoreo y Automatización para Cursor AI
+# 🤖 ChatGPT Web Automation - Cursor AI Integration
 
-## 📋 Resumen Ejecutivo
+Sistema de automatización avanzado para **Cursor AI** que permite interactuar directamente con **Project Test de OpenAI** usando Chrome. Genera código, responde preguntas y mantiene logs automáticos.
 
-Sistema completo de monitoreo de memoria, captura de GUI y **automatización real de ChatGPT web** optimizado específicamente para **Cursor AI**. Permite monitorear procesos, capturar ventanas, y **interactuar automáticamente con ChatGPT usando tokens de chat (no API)** para desarrollo acelerado.
+## 🎯 Características Principales
 
-### ✨ Características Principales
+- ✅ **Chrome 100%** - Optimizado exclusivamente para Chrome
+- 🎯 **Project Test** - Integración directa con OpenAI Project Test
+- 🤖 **Automatización Real** - Interacción directa con ChatGPT web
+- ⚡ **Tokens Ilimitados** - Usa ChatGPT web, no API
+- 📁 **Archivos Automáticos** - Generación y guardado automático
+- 🔒 **Detección de Login** - Verifica estado de autenticación
+- 🚀 **Cursor AI Ready** - Configuración optimizada para desarrollo
 
-- 🔍 **Monitoreo de Memoria**: Análisis en tiempo real de uso de memoria por proceso
-- 🖼️ **Captura de GUI**: Screenshots automáticos de ventanas de aplicaciones
-- 🤖 **ChatGPT Web Automation**: Interacción automática con ChatGPT web real
-- 🔒 **Sistema de Seguridad**: Whitelist de procesos permitidos
-- ⚡ **VS Code Optimizado**: Configuración de alto rendimiento para Cursor AI
-- 🎯 **Tokens Ilimitados**: Usa ChatGPT web, no API (workaround perfecto)
-- 🚀 **Desarrollo Acelerado**: Integración perfecta con Cursor AI
-
----
-
-## 🛠️ Instalación y Configuración
+## 🛠️ Instalación para Cursor AI
 
 ### Requisitos Previos
 
 ```bash
 # Windows 10/11 con PowerShell 7
-# MinGW-w64 (g++ compiler)
-# Cursor AI o VS Code con extensiones C++ y PowerShell
+# Chrome instalado
+# Cursor AI con extensiones PowerShell
 ```
 
 ### Instalación Rápida
 
 ```powershell
-# 1. Clonar o descargar el proyecto
+# 1. Clonar repositorio
 git clone <repository-url>
 cd memory
 
-# 2. Compilar módulos
-.\build.bat
+# 2. Verificar archivos
+ls -la
 
-# 3. Ejecutar sistema
-.\monitor.ps1
+# 3. Probar instalación
+.\chatgpt_web_automation.ps1 -Command open
 ```
 
----
+## 🎮 Uso con Cursor AI
 
-## 🎮 Uso del Sistema
-
-### 📊 Monitoreo de Memoria
+### Comandos Principales
 
 ```powershell
-# Ver todos los procesos
-.\memory_monitor.exe memory
+# 🚀 Abrir Project Test automáticamente
+.\chatgpt_web_automation.ps1 -Command open
 
-# Monitorear proceso específico
-.\memory_monitor.exe monitor chrome.exe
+# ❓ Hacer pregunta técnica
+.\chatgpt_web_automation.ps1 -Command ask -Question "¿Cómo optimizar código Python?"
 
-# Ver configuración de seguridad
-.\memory_monitor.exe security
+# 💻 Generar código específico
+.\chatgpt_web_automation.ps1 -Command code -Question "función para validar email"
 ```
 
-### 🖼️ Captura de GUI
+### Flujo de Trabajo con Cursor AI
 
-```powershell
-# Listar ventanas disponibles
-.\gui_capture.exe list
+1. **Abrir Project Test:**
+   ```powershell
+   .\chatgpt_web_automation.ps1 -Command open
+   ```
 
-# Capturar ventana específica
-.\gui_capture.exe capture chrome.exe
+2. **Generar código para tu proyecto:**
+   ```powershell
+   .\chatgpt_web_automation.ps1 -Command code -Question "clase para manejo de base de datos SQLite"
+   ```
 
-# Ver ventana activa
-.\gui_capture.exe active
-```
+3. **Consultar mejores prácticas:**
+   ```powershell
+   .\chatgpt_web_automation.ps1 -Command ask -Question "patrones de diseño en JavaScript"
+   ```
 
-### 🤖 Automatización ChatGPT
+4. **Revisar archivos generados:**
+   ```powershell
+   # Ver código generado
+   cat output/generated_code.txt
+   
+   # Ver historial de conversaciones
+   cat output/conversation_log.txt
+   ```
 
-#### **ChatGPT Web Real** (Recomendado)
-```powershell
-# Modo interactivo
-.\chatgpt_web_automation.ps1 -Command interactive
+## 🔧 Configuración Avanzada
 
-# Generar código
-.\chatgpt_web_automation.ps1 -Command code -Language python -Description "función para ordenar lista"
+### Configuración JSON
 
-# Hacer pregunta
-.\chatgpt_web_automation.ps1 -Command ask -Question "¿Qué es Python?"
-```
-
-#### **ChatGPT Demo** (Simulación)
-```powershell
-# Demo completo
-.\chatgpt_demo.ps1 demo
-
-# Generar código específico
-.\chatgpt_demo.ps1 code javascript "función de validación de email"
-
-# Pregunta específica
-.\chatgpt_demo.ps1 ask "¿Qué es JavaScript?"
-```
-
-### 🎯 Interfaz Unificada
-
-```powershell
-# Menú principal con todas las opciones
-.\monitor.ps1
-```
-
----
-
-## 🔧 Configuración Optimizada para Cursor AI
-
-### 🚀 Características de Rendimiento
-
-- **⏱️ Timeouts**: Prevención de colgadas (15s-120s)
-- **💾 Memoria**: Optimización para archivos grandes (16GB)
-- **🔍 Búsqueda**: Exclusión de archivos innecesarios
-- **⚡ Compilación**: Optimización -O2 para velocidad
-- **🎯 IntelliSense**: Configuración específica para C++
-- **🤖 Cursor AI**: Integración perfecta con el editor
-
-### 📋 Tareas Disponibles
-
-| Tarea | Descripción | Tiempo |
-|-------|-------------|--------|
-| `🔄 Compilar Todo` | Compilación completa | 30s |
-| `⚡ Compilar Rápido` | Compilación optimizada | 15s |
-| `🧹 Limpiar` | Limpieza de archivos | 10s |
-| `📊 Monitorear Memoria` | Análisis de memoria | 10s |
-| `🖼️ Capturar GUI` | Listar ventanas | 10s |
-| `🤖 ChatGPT Demo` | Demo de automatización | 30s |
-| `🌐 ChatGPT Web` | Automatización real | 60s |
-| `🚀 Ejecutar Todo` | Sistema completo | 120s |
-
-### 🐛 Debugging
+El archivo `config.json` permite personalizar:
 
 ```json
-// Configuraciones de debug disponibles:
-"🔧 Debug Memory Monitor"     // Debug C++ memory monitor
-"🖼️ Debug GUI Capture"       // Debug C++ GUI capture
-"🤖 Debug ChatGPT Automation" // Debug C++ ChatGPT automation
-"📝 Debug PowerShell Script"  // Debug PowerShell scripts
-"🌐 Debug ChatGPT Web"       // Debug ChatGPT web automation
-"🤖 Debug ChatGPT Demo"      // Debug ChatGPT demo
-"🚀 Debug Sistema Completo"  // Debug completo
-"🔍 Debug Individual C++"    // Debug C++ individual
-"⚡ Debug Rápido"           // Debug rápido
+{
+  "project_test": {
+    "url": "https://chatgpt.com/g/g-p-688427888348819183c00555973ff94e-project-test/project",
+    "detection": {
+      "login_required": true,
+      "login_selectors": ["button[data-testid='login-button']"],
+      "logged_in_selectors": [".chat-container"]
+    }
+  },
+  "output": {
+    "files": {
+      "generated_code": "generated_code.{language}",
+      "conversation_log": "conversation_log.txt",
+      "debug_log": "debug.log"
+    },
+    "auto_save": true
+  }
+}
 ```
 
----
+### Personalización para Cursor AI
+
+1. **Modificar URL de Project Test:**
+   ```json
+   "url": "tu-url-específica-de-project-test"
+   ```
+
+2. **Cambiar formato de archivos:**
+   ```json
+   "generated_code": "mi_codigo_{language}.{extension}"
+   ```
+
+3. **Ajustar timeouts:**
+   ```json
+   "timeout": 45,
+   "wait_time": 3000
+   ```
 
 ## 📁 Estructura del Proyecto
 
 ```
 memory/
-├── 📄 Código Fuente
-│   ├── memory_monitor.cpp      # 🔍 Monitoreo de memoria
-│   ├── gui_capture.cpp        # 🖼️ Captura de GUI
-│   ├── chatgpt_automation.cpp # 🤖 Automatización C++
-│   └── security_config.h      # 🔒 Configuración de seguridad
+├── 📄 Scripts Principales
+│   ├── chatgpt_web_automation.ps1  # 🚀 Script principal
+│   └── config.json                 # ⚙️ Configuración
 │
-├── 🔧 Scripts PowerShell
-│   ├── monitor.ps1            # 🎯 Interfaz principal
-│   ├── chatgpt_web_automation.ps1  # ⭐ ChatGPT web real
-│   ├── chatgpt_demo.ps1      # 🎭 Demo ChatGPT
-│   └── clean.ps1             # 🧹 Limpieza inteligente
+├── 📦 Archivos de Sistema
+│   ├── cursorAI_chatgpt.exe        # 🔧 Ejecutable
+│   ├── README.md                   # 📖 Documentación
+│   └── .gitignore                  # 🚫 Archivos ignorados
 │
-├── ⚙️ Configuración Cursor AI/VS Code
-│   ├── .vscode/settings.json      # ⚡ Configuración optimizada
-│   ├── .vscode/tasks.json        # 🔧 Tareas automatizadas
-│   ├── .vscode/launch.json      # 🐛 Debugging
-│   ├── .vscode/c_cpp_properties.json # 🎯 IntelliSense C++
-│   ├── .vscode/extensions.json   # 📦 Extensiones
-│   └── .vscode/performance.json  # 🚀 Optimizaciones
-│
-├── 🛠️ Herramientas
-│   ├── build.bat              # 🔨 Compilación básica
-│   ├── build_optimized.bat    # ⚡ Compilación optimizada
-│   ├── project_config.json    # 📊 Configuración centralizada
-│   └── README.md             # 📖 Documentación completa
-│
-├── 📖 Documentación
-│   ├── CURSOR_AI_GUIDE.md    # 🤖 Guía específica para Cursor AI
-│   └── MEJORAS_IMPLEMENTADAS.md # 🚀 Detalles de mejoras
-│
-└── 📊 Archivos Generados
-    ├── *.exe                 # Ejecutables compilados
-    ├── generated_code.*       # Código generado por ChatGPT
-    └── capture_*.bmp         # Screenshots capturados
+└── 📊 Archivos Generados (output/)
+    ├── generated_code.txt          # 💻 Código generado
+    ├── conversation_log.txt        # 💬 Historial de chat
+    └── debug.log                   # 🐛 Logs de debug
 ```
 
----
+## 🚀 Casos de Uso con Cursor AI
 
-## 🎯 Funcionalidades Detalladas
+### Desarrollo de Aplicaciones
 
-### 🔍 Monitoreo de Memoria
-
-- **Análisis en tiempo real** de uso de memoria por proceso
-- **Filtrado por proceso** específico (ej: chrome.exe)
-- **Información detallada**: PID, memoria, título de ventana
-- **Sistema de seguridad** con whitelist de procesos
-
-### 🖼️ Captura de GUI
-
-- **Detección automática** de ventanas activas
-- **Screenshots en BMP** de alta calidad
-- **Extracción de texto** de controles de ventana
-- **Posicionamiento inteligente** de ventanas off-screen
-
-### 🤖 Automatización ChatGPT
-
-#### **ChatGPT Web Real** ⭐
-- **Interacción real** con ChatGPT web
-- **Uso de tokens de chat** (no API)
-- **Envío automático** de prompts
-- **Generación de código** en archivos
-- **Modo interactivo** completo
-
-#### **ChatGPT Demo**
-- **Simulación completa** de interacción
-- **Respuestas predefinidas** inteligentes
-- **Generación de código** en múltiples lenguajes
-- **Demo funcional** sin dependencias web
-
-### 🔒 Sistema de Seguridad
-
-- **Whitelist de procesos** permitidos
-- **Validación de permisos** de administrador
-- **Control de acceso** a navegadores específicos
-- **Auditoría de actividad** del sistema
-
----
-
-## 🚀 Casos de Uso
-
-### 👨‍💻 Desarrollo
 ```powershell
-# Monitorear uso de memoria durante desarrollo
-.\memory_monitor.exe monitor code.exe
+# Generar estructura de proyecto
+.\chatgpt_web_automation.ps1 -Command code -Question "estructura de proyecto React con TypeScript"
 
-# Generar código automáticamente
-.\chatgpt_web_automation.ps1 -Command code -Language python -Description "clase para manejo de base de datos"
+# Crear componentes
+.\chatgpt_web_automation.ps1 -Command code -Question "componente React para formulario de login"
+
+# Generar APIs
+.\chatgpt_web_automation.ps1 -Command code -Question "API REST con Express.js y MongoDB"
 ```
 
-### 🔍 Análisis de Sistema
+### Debugging y Optimización
+
 ```powershell
-# Analizar procesos con mayor uso de memoria
-.\memory_monitor.exe memory | Sort-Object {[int]($_.Split()[1])} -Descending
+# Analizar problemas de rendimiento
+.\chatgpt_web_automation.ps1 -Command ask -Question "cómo optimizar consultas SQL lentas"
 
-# Capturar estado de aplicaciones críticas
-.\gui_capture.exe capture chrome.exe
+# Revisar mejores prácticas
+.\chatgpt_web_automation.ps1 -Command ask -Question "patrones anti-patterns en JavaScript"
+
+# Generar tests
+.\chatgpt_web_automation.ps1 -Command code -Question "tests unitarios con Jest para función de validación"
 ```
 
-### 🤖 Automatización
+### Documentación
+
 ```powershell
-# Generar documentación automáticamente
-.\chatgpt_web_automation.ps1 -Command ask -Question "Genera documentación para una API REST en Python"
+# Generar documentación técnica
+.\chatgpt_web_automation.ps1 -Command ask -Question "cómo documentar una API REST"
 
-# Crear scripts de automatización
-.\chatgpt_web_automation.ps1 -Command code -Language powershell -Description "script para backup automático"
+# Crear README
+.\chatgpt_web_automation.ps1 -Command code -Question "README.md para proyecto Node.js"
+
+# Documentar funciones
+.\chatgpt_web_automation.ps1 -Command ask -Question "mejores prácticas para documentar código Python"
 ```
 
----
+## ⚡ Optimizaciones para Cursor AI
 
-## ⚡ Optimizaciones de Rendimiento
+### Configuración de Rendimiento
 
-### 🎯 VS Code
-- **Exclusión de archivos** innecesarios (*.exe, *.bmp)
-- **Límite de editores** abiertos (8 máximo)
-- **Desactivación** de características pesadas
-- **Optimización** de IntelliSense para C++
+1. **Timeouts Optimizados:**
+   - Respuesta rápida: 10-15 segundos
+   - Generación de código: 20-30 segundos
+   - Timeout máximo: 45 segundos
 
-### 🔧 Compilación
-- **Optimización -O2** para velocidad
-- **Compilación paralela** cuando es posible
-- **Timeouts** para prevenir colgadas
-- **Limpieza automática** de archivos temporales
+2. **Gestión de Memoria:**
+   - Limpieza automática de archivos temporales
+   - Logs rotativos para evitar archivos grandes
+   - Compresión de respuestas largas
 
-### 💾 Memoria
-- **Gestión inteligente** de archivos grandes
-- **Exclusión** de archivos generados
-- **Optimización** de búsqueda y indexación
-- **Límites** de memoria por archivo
+3. **Integración con Cursor AI:**
+   - Compatible con extensiones PowerShell
+   - Soporte para autocompletado
+   - Integración con terminal integrado
 
----
+### Flujo de Trabajo Optimizado
 
-## 🔮 Próximos Pasos
+```powershell
+# 1. Iniciar sesión en Project Test
+.\chatgpt_web_automation.ps1 -Command open
 
-### 🚀 Mejoras Técnicas
-- [ ] **Integración con APIs** de monitoreo avanzado
-- [ ] **Dashboard web** para visualización
-- [ ] **Sistema de alertas** automáticas
-- [ ] **Análisis de red** y conexiones
+# 2. Generar código para tu proyecto actual
+.\chatgpt_web_automation.ps1 -Command code -Question "función para el archivo actual"
 
-### 🤖 Automatización Avanzada
-- [ ] **Extracción real** de respuestas de ChatGPT
-- [ ] **Sistema de plugins** para diferentes lenguajes
-- [ ] **Integración con CI/CD**
-- [ ] **Webhooks** para notificaciones
+# 3. Revisar y copiar código generado
+Get-Content output/generated_code.txt
 
-### 🎯 Funcionalidades
-- [ ] **Interfaz gráfica** (GUI) nativa
-- [ ] **Monitoreo remoto** de sistemas
-- [ ] **Análisis de archivos** y procesos
-- [ ] **Sistema de logs** detallados
+# 4. Integrar en tu proyecto Cursor AI
+# (Copiar y pegar el código generado)
+```
 
----
+## 🔒 Seguridad y Privacidad
 
-## ✅ Estado Actual
+### Características de Seguridad
 
-### 🟢 Funcionando Perfectamente
-- ✅ Monitoreo de memoria en tiempo real
-- ✅ Captura de GUI con screenshots
-- ✅ Automatización ChatGPT web real
-- ✅ Sistema de seguridad con whitelist
-- ✅ Configuración VS Code optimizada
-- ✅ Compilación automática con timeouts
-- ✅ Interfaz PowerShell unificada
+- ✅ **Whitelist de procesos** - Solo Chrome permitido
+- ✅ **Validación de login** - Verifica autenticación
+- ✅ **Control de acceso** - Solo Project Test específico
+- ✅ **Logs seguros** - Sin información sensible
 
-### 🔄 En Desarrollo
-- 🔄 Extracción automática de respuestas ChatGPT
-- 🔄 Dashboard web de monitoreo
-- 🔄 Sistema de alertas inteligentes
+### Configuración de Privacidad
 
-### 🎯 Logros Destacados
-- **🚀 ChatGPT Web Real**: Interacción automática exitosa
-- **⚡ Rendimiento**: VS Code optimizado sin colgadas
-- **🔒 Seguridad**: Sistema de whitelist funcional
-- **🎯 Tokens Ilimitados**: Workaround perfecto implementado
+```json
+{
+  "security": {
+    "allowed_processes": ["chrome.exe"],
+    "allowed_urls": ["chatgpt.com"],
+    "log_sensitive_data": false
+  }
+}
+```
+
+## 🐛 Troubleshooting
+
+### Problemas Comunes
+
+1. **"No se encontró Project Test"**
+   ```powershell
+   # Verificar que Chrome esté abierto
+   Get-Process chrome
+   
+   # Abrir Project Test manualmente
+   .\chatgpt_web_automation.ps1 -Command open
+   ```
+
+2. **"Usuario no logueado"**
+   ```powershell
+   # Ir a Project Test y hacer login
+   # Luego ejecutar el comando nuevamente
+   ```
+
+3. **"Error de timeout"**
+   ```powershell
+   # Aumentar timeout en config.json
+   "timeout": 60
+   ```
+
+### Debug Avanzado
+
+```powershell
+# Ver logs detallados
+Get-Content output/debug.log
+
+# Verificar configuración
+Get-Content config.json | ConvertFrom-Json
+
+# Probar conexión
+.\chatgpt_web_automation.ps1 -Command ask -Question "test"
+```
+
+## 📊 Monitoreo y Logs
+
+### Archivos de Log
+
+- **`conversation_log.txt`** - Historial completo de conversaciones
+- **`debug.log`** - Logs técnicos para debugging
+- **`generated_code.txt`** - Código generado más reciente
+
+### Análisis de Uso
+
+```powershell
+# Ver estadísticas de uso
+Get-Content output/conversation_log.txt | Measure-Object -Line
+
+# Buscar conversaciones específicas
+Select-String "Python" output/conversation_log.txt
+
+# Ver código generado recientemente
+Get-Content output/generated_code.txt
+```
+
+## 🚀 Próximas Mejoras
+
+### Roadmap
+
+- [ ] **Integración con APIs** - Conexión directa con APIs
+- [ ] **Dashboard Web** - Interfaz visual para monitoreo
+- [ ] **Sistema de Plugins** - Extensiones para diferentes lenguajes
+- [ ] **CI/CD Integration** - Automatización en pipelines
+- [ ] **Multi-navegador** - Soporte para Edge y Firefox
+
+### Contribuciones
+
+Para contribuir al proyecto:
+
+1. Fork el repositorio
+2. Crear rama para feature: `git checkout -b feature/nueva-funcionalidad`
+3. Commit cambios: `git commit -am 'Agregar nueva funcionalidad'`
+4. Push a la rama: `git push origin feature/nueva-funcionalidad`
+5. Crear Pull Request
+
+## 📞 Soporte
+
+### Recursos de Ayuda
+
+- **Documentación:** Este README
+- **Issues:** GitHub Issues
+- **Discusiones:** GitHub Discussions
+- **Wiki:** Documentación técnica detallada
+
+### Contacto
+
+- **Email:** soporte@proyecto.com
+- **Discord:** Comunidad de desarrolladores
+- **Telegram:** Canal de notificaciones
+
+## 📄 Licencia
+
+Este proyecto está bajo la licencia MIT. Ver `LICENSE` para más detalles.
 
 ---
 
 ## 🎉 Conclusión
 
-El sistema está **completamente funcional** y optimizado específicamente para **Cursor AI**:
+Este sistema de automatización está **optimizado específicamente para Cursor AI** y proporciona:
 
-- **Monitoreo profesional** de memoria y GUI
-- **Automatización real** de ChatGPT web
-- **Desarrollo acelerado** con Cursor AI optimizado
-- **Tokens ilimitados** usando ChatGPT web
 - **Integración perfecta** con el flujo de trabajo de Cursor AI
+- **Generación automática** de código y documentación
+- **Tokens ilimitados** usando Project Test de OpenAI
+- **Configuración flexible** para diferentes proyectos
+- **Logs detallados** para debugging y análisis
 
-**¡Listo para uso en producción con Cursor AI!** 🚀
-
----
-
-## 📖 Documentación Adicional
-
-- **[CURSOR_AI_GUIDE.md](CURSOR_AI_GUIDE.md)** - Guía específica para Cursor AI
-- **[MEJORAS_IMPLEMENTADAS.md](MEJORAS_IMPLEMENTADAS.md)** - Detalles técnicos de mejoras
+**¡Listo para acelerar tu desarrollo con Cursor AI!** 🚀
 
 ---
 
-## 📞 Soporte
-
-Para problemas o mejoras:
-1. Revisar la documentación completa
-2. Verificar configuración de VS Code
-3. Ejecutar tareas de limpieza si es necesario
-4. Contactar para soporte técnico
-
-**¡Disfruta del sistema de monitoreo y automatización más avanzado!** 🎯
+*Desarrollado con ❤️ para la comunidad de Cursor AI*

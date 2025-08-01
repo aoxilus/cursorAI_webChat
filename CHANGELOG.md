@@ -1,90 +1,104 @@
-# 📋 Changelog
+# Changelog
 
 Todos los cambios notables en este proyecto serán documentados en este archivo.
 
 El formato está basado en [Keep a Changelog](https://keepachangelog.com/en/1.0.0/),
 y este proyecto adhiere a [Semantic Versioning](https://semver.org/spec/v2.0.0.html).
 
-## [2.0.0] - 2024-12-19
+## [1.0.0] - 2025-08-01
 
 ### 🚀 Agregado
-- **ChatGPT Web Automation** - Interacción real con ChatGPT web usando tokens de chat
-- **Sistema de Limpieza Avanzado** - Script `clean.ps1` con múltiples opciones
-- **Configuración Centralizada** - `project_config.json` para toda la configuración
-- **Optimización VS Code** - Configuración específica para Cursor AI
-- **Compilación Optimizada** - `build_optimized.bat` con timeouts y optimización -O2
-- **Sistema de Seguridad** - Whitelist de procesos permitidos
-- **Documentación Completa** - README, guías y documentación técnica
+- **Integración completa con Cursor AI**
+  - Script principal `chatgpt_web_automation.ps1`
+  - Configuración JSON centralizada
+  - Detección automática de Project Test
+  - Generación automática de archivos de salida
+
+- **Comandos principales**
+  - `open` - Abrir Project Test automáticamente
+  - `ask` - Hacer preguntas a ChatGPT
+  - `code` - Generar código específico
+
+- **Configuración avanzada**
+  - Archivo `config.json` para personalización
+  - Detección de login automática
+  - Timeouts configurables
+  - Whitelist de procesos de seguridad
+
+- **Archivos de salida automáticos**
+  - `generated_code.txt` - Código generado
+  - `conversation_log.txt` - Historial de conversaciones
+  - `debug.log` - Logs de debugging
+
+- **Documentación completa**
+  - README.md detallado para Cursor AI
+  - Instrucciones de instalación y uso
+  - Casos de uso específicos
+  - Troubleshooting y debugging
 
 ### 🔧 Mejorado
-- **Rendimiento** - Optimización -O2 para compilación más rápida
-- **Timeouts** - Prevención de colgadas en VS Code (15s-120s)
-- **Exclusión de Archivos** - Mejor gestión de archivos innecesarios
-- **IntelliSense** - Configuración específica para C++
-- **Manejo de Errores** - Mejor robustez en todos los módulos
+- **Optimización para Chrome 100%**
+  - Eliminado soporte para Edge y desktop app
+  - Enfoque exclusivo en Project Test
+  - Mejor rendimiento y estabilidad
 
-### 🧹 Limpiado
-- **Archivos Obsoletos** - Eliminados scripts duplicados y versiones antiguas
-- **Código Redundante** - Refactorización de funciones duplicadas
-- **Documentación** - Consolidación de archivos de documentación
-
-### 🔒 Seguridad
-- **Whitelist de Procesos** - Control de acceso a navegadores específicos
-- **Validación de Permisos** - Verificación de privilegios de administrador
-- **Auditoría de Actividad** - Monitoreo de seguridad del sistema
-
-### 📖 Documentación
-- **README.md** - Documentación principal actualizada
-- **CURSOR_AI_GUIDE.md** - Guía específica para Cursor AI
-- **MEJORAS_IMPLEMENTADAS.md** - Detalles técnicos de mejoras
-- **CONTRIBUTING.md** - Guía para contribuidores
-- **CHANGELOG.md** - Historial de cambios
-
-## [1.0.0] - 2024-12-18
-
-### 🚀 Agregado
-- **Monitoreo de Memoria** - Análisis en tiempo real de uso de memoria por proceso
-- **Captura de GUI** - Screenshots automáticos de ventanas de aplicaciones
-- **Interfaz PowerShell** - Script `monitor.ps1` como punto de entrada principal
-- **Compilación Básica** - Script `build.bat` para compilar módulos C++
-- **Módulos C++** - `memory_monitor.cpp`, `gui_capture.cpp`, `chatgpt_automation.cpp`
-
-### 🔧 Mejorado
-- **Detección de Ventanas** - Búsqueda inteligente de ventanas activas
-- **Extracción de Texto** - Captura de texto de controles de ventana
-- **Formato de Salida** - Información estructurada y legible
+- **Integración con Project Test**
+  - URL específica de OpenAI
+  - Detección automática de ventanas
+  - Manejo de errores mejorado
 
 ### 🐛 Corregido
-- **Manejo de Errores** - Mejor gestión de procesos no encontrados
-- **Permisos** - Verificación de acceso a procesos del sistema
+- **Detección de ventanas**
+  - Búsqueda optimizada de Project Test
+  - Validación de login mejorada
+  - Manejo de timeouts
 
----
+- **Generación de archivos**
+  - Creación automática de carpeta output
+  - Guardado correcto de logs
+  - Formato de archivos consistente
 
-## Tipos de Cambios
+### 🔒 Seguridad
+- **Whitelist de procesos**
+  - Solo Chrome permitido
+  - Validación de URLs
+  - Control de acceso específico
 
-- **🚀 Agregado** - Nueva funcionalidad
-- **🔧 Mejorado** - Mejoras en funcionalidad existente
-- **🐛 Corregido** - Corrección de bugs
-- **🧹 Limpiado** - Limpieza de código y archivos
-- **🔒 Seguridad** - Mejoras de seguridad
-- **📖 Documentación** - Cambios en documentación
-- **⚡ Rendimiento** - Mejoras de rendimiento
-- **🛠️ Herramientas** - Nuevas herramientas de desarrollo
+## [0.9.0] - 2025-07-31
+
+### 🚀 Agregado
+- **Versión beta inicial**
+  - Script básico de automatización
+  - Soporte para múltiples navegadores
+  - Funcionalidad básica de ChatGPT
+
+### 🔧 Mejorado
+- **Compatibilidad inicial**
+  - Soporte para Chrome y Edge
+  - Detección básica de ventanas
+  - Interacción simple con ChatGPT
 
 ---
 
 ## Notas de Versión
 
-### v2.0.0
-Esta versión representa una reescritura completa del sistema con:
-- Integración perfecta con Cursor AI
-- Automatización real de ChatGPT web
-- Sistema de limpieza y mantenimiento avanzado
-- Optimizaciones de rendimiento significativas
+### Versión 1.0.0
+Esta es la primera versión estable del proyecto, optimizada específicamente para Cursor AI y Project Test de OpenAI.
 
-### v1.0.0
-Versión inicial con funcionalidades básicas de monitoreo y captura de GUI.
+### Características Destacadas
+- ✅ Integración perfecta con Cursor AI
+- ✅ Project Test de OpenAI
+- ✅ Generación automática de código
+- ✅ Logs detallados y debugging
+- ✅ Configuración flexible
+- ✅ Documentación completa
+
+### Próximas Versiones
+- **1.1.0** - Integración con APIs
+- **1.2.0** - Dashboard web
+- **1.3.0** - Sistema de plugins
+- **2.0.0** - Multi-navegador completo
 
 ---
 
-**Para más detalles sobre cada versión, consulta los tags de Git.**
+*Para más detalles sobre cambios específicos, consulta los commits en el repositorio.* 

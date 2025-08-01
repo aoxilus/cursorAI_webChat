@@ -1,0 +1,42 @@
+{
+  "project_test": {
+    "url": "https://chatgpt.com/g/g-p-688427888348819183c00555973ff94e-project-test/project",
+    "name": "Project Test",
+    "detection": {
+      "login_required": true,
+      "login_selectors": [
+        "button[data-testid='login-button']",
+        ".login-container",
+        "[data-testid='sign-in']"
+      ],
+      "logged_in_selectors": [
+        ".chat-container",
+        "[data-testid='chat-input']",
+        ".conversation-list"
+      ]
+    }
+  },
+  "output": {
+    "files": {
+      "generated_code": "generated_code.{language}",
+      "conversation_log": "conversation_log.txt",
+      "screenshots": "screenshots/",
+      "debug_log": "debug.log"
+    },
+    "formats": ["txt", "json", "md"],
+    "auto_save": true
+  },
+  "chrome": {
+    "process_name": "chrome.exe",
+    "window_title_patterns": [
+      "*Project Test*",
+      "*ChatGPT*"
+    ],
+    "timeout": 30
+  },
+  "automation": {
+    "wait_time": 2000,
+    "retry_attempts": 3,
+    "interactive_mode": true
+  }
+} 

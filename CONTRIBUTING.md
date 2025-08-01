@@ -1,238 +1,253 @@
-# 🤝 Contribuir al Sistema de Monitoreo para Cursor AI
+# Contributing to ChatGPT Web Automation
 
-¡Gracias por tu interés en contribuir! Este proyecto está diseñado para optimizar el desarrollo con Cursor AI.
+¡Gracias por tu interés en contribuir a este proyecto! Este documento proporciona las pautas para contribuir al sistema de automatización de ChatGPT para Cursor AI.
 
 ## 🚀 Cómo Contribuir
 
-### 1️⃣ **Fork y Clone**
+### Tipos de Contribuciones
 
-```bash
-# Fork el repositorio en GitHub
-# Luego clona tu fork
-git clone https://github.com/TU_USUARIO/memory-monitoring-cursor-ai.git
-cd memory-monitoring-cursor-ai
-```
+Aceptamos los siguientes tipos de contribuciones:
 
-### 2️⃣ **Configurar el Entorno**
+- 🐛 **Bug Reports** - Reportar errores encontrados
+- 💡 **Feature Requests** - Solicitar nuevas funcionalidades
+- 📝 **Documentation** - Mejorar documentación
+- 🔧 **Code Improvements** - Mejorar código existente
+- 🧪 **Testing** - Probar y validar funcionalidades
 
-```powershell
-# Instalar dependencias
-# Asegúrate de tener MinGW-w64 instalado
-winget install MinGW.MinGW
+## 📋 Antes de Contribuir
 
-# Compilar el proyecto
-.\build_optimized.bat
+### Requisitos
 
-# Verificar que todo funciona
-.\monitor.ps1
-```
+- Windows 10/11 con PowerShell 7
+- Chrome instalado
+- Cursor AI (opcional pero recomendado)
+- Conocimientos básicos de PowerShell
 
-### 3️⃣ **Crear una Rama**
+### Configuración del Entorno
+
+1. **Fork el repositorio**
+   ```bash
+   git clone https://github.com/tu-usuario/chatgpt-web-automation.git
+   cd chatgpt-web-automation
+   ```
+
+2. **Instalar dependencias**
+   ```powershell
+   # Verificar PowerShell 7
+   $PSVersionTable.PSVersion
+   
+   # Verificar Chrome
+   Get-Process chrome -ErrorAction SilentlyContinue
+   ```
+
+3. **Probar instalación**
+   ```powershell
+   .\chatgpt_web_automation.ps1 -Command open
+   ```
+
+## 🔧 Proceso de Desarrollo
+
+### 1. Crear una Rama
 
 ```bash
 git checkout -b feature/nueva-funcionalidad
 # o
-git checkout -b fix/correccion-bug
+git checkout -b fix/correccion-error
 ```
 
-### 4️⃣ **Desarrollar**
+### 2. Hacer Cambios
 
-- **Sigue las convenciones** del proyecto
-- **Mantén el código limpio** y bien documentado
-- **Prueba tus cambios** antes de commitear
-- **Usa los scripts de limpieza** para mantener el proyecto organizado
+- **Sigue las convenciones de código**
+- **Prueba tus cambios**
+- **Actualiza documentación si es necesario**
 
-### 5️⃣ **Commit y Push**
+### 3. Commit y Push
 
 ```bash
 git add .
-git commit -m "feat: agregar nueva funcionalidad de monitoreo"
+git commit -m "feat: agregar nueva funcionalidad X"
 git push origin feature/nueva-funcionalidad
 ```
 
-### 6️⃣ **Crear Pull Request**
+### 4. Crear Pull Request
 
-- Ve a tu fork en GitHub
-- Crea un Pull Request
 - Describe claramente los cambios
-- Incluye ejemplos de uso si es necesario
+- Incluye ejemplos de uso
+- Menciona cualquier breaking change
 
-## 📋 Convenciones del Proyecto
+## 📝 Convenciones de Código
 
-### **Estructura de Commits**
-
-```
-tipo: descripción breve
-
-feat: nueva funcionalidad
-fix: corrección de bug
-docs: documentación
-style: formato de código
-refactor: refactorización
-test: pruebas
-chore: tareas de mantenimiento
-```
-
-### **Estructura de Archivos**
-
-```
-📁 Código Fuente (.cpp, .h)
-├── memory_monitor.cpp      # Monitoreo de memoria
-├── gui_capture.cpp        # Captura de GUI
-├── chatgpt_automation.cpp # Automatización C++
-└── security_config.h      # Configuración de seguridad
-
-🔧 Scripts PowerShell (.ps1)
-├── monitor.ps1            # Interfaz principal
-├── chatgpt_web_automation.ps1  # ChatGPT web real
-├── chatgpt_demo.ps1      # Demo ChatGPT
-└── clean.ps1             # Limpieza inteligente
-
-⚙️ Configuración (.json, .bat)
-├── .vscode/              # Configuración VS Code/Cursor AI
-├── build.bat             # Compilación básica
-├── build_optimized.bat   # Compilación optimizada
-└── project_config.json   # Configuración centralizada
-```
-
-### **Estándares de Código**
-
-#### **C++**
-- **Indentación**: 4 espacios
-- **Nombres**: camelCase para variables, PascalCase para clases
-- **Comentarios**: En español, claros y concisos
-- **Headers**: Incluir descripción de la clase al inicio
-
-#### **PowerShell**
-- **Indentación**: 4 espacios
-- **Nombres**: Verb-Noun para funciones
-- **Comentarios**: En español, explicar lógica compleja
-- **Manejo de errores**: Usar try-catch cuando sea apropiado
-
-## 🎯 Áreas de Contribución
-
-### **Funcionalidades Nuevas**
-- [ ] **Monitoreo de red** - Análisis de conexiones
-- [ ] **Dashboard web** - Interfaz gráfica
-- [ ] **Sistema de alertas** - Notificaciones automáticas
-- [ ] **Análisis de archivos** - Detección de malware
-- [ ] **Integración con APIs** - Servicios externos
-
-### **Mejoras de Rendimiento**
-- [ ] **Compilación paralela** - Más rápida
-- [ ] **Optimización de memoria** - Menor uso de RAM
-- [ ] **Caché inteligente** - Resultados más rápidos
-- [ ] **Lazy loading** - Carga bajo demanda
-
-### **Documentación**
-- [ ] **Tutoriales paso a paso** - Para principiantes
-- [ ] **Ejemplos de uso** - Casos reales
-- [ ] **API documentation** - Referencia técnica
-- [ ] **Videos demostrativos** - Guías visuales
-
-### **Testing**
-- [ ] **Unit tests** - Para funciones individuales
-- [ ] **Integration tests** - Para módulos completos
-- [ ] **Performance tests** - Para rendimiento
-- [ ] **Security tests** - Para vulnerabilidades
-
-## 🔧 Herramientas de Desarrollo
-
-### **Scripts Útiles**
+### PowerShell
 
 ```powershell
-# Compilar con optimización
-.\build_optimized.bat
+# ✅ Correcto
+function Get-UserData {
+    param([string]$userId)
+    
+    if (-not $userId) {
+        Write-Host "❌ User ID requerido" -ForegroundColor Red
+        return $null
+    }
+    
+    # Lógica aquí
+}
 
-# Limpiar archivos generados
-.\clean.ps1 quick
-
-# Ver estadísticas del proyecto
-.\clean.ps1 stats
-
-# Probar ChatGPT web
-.\chatgpt_web_automation.ps1 -Command interactive
+# ❌ Incorrecto
+function getUserData($userId) {
+    if (!$userId) {
+        return null
+    }
+}
 ```
 
-### **VS Code/Cursor AI Tasks**
+### Nombres de Archivos
 
-- `🔄 Compilar Todo` - Compilación completa
-- `⚡ Compilar Rápido` - Compilación optimizada
-- `🧹 Limpiar` - Limpieza de archivos
-- `🌐 ChatGPT Web` - Automatización real
+- **Scripts PowerShell:** `verb-noun.ps1`
+- **Configuración:** `config.json`
+- **Documentación:** `README.md`, `CONTRIBUTING.md`
 
-## 🐛 Reportar Bugs
+### Mensajes de Commit
 
-### **Antes de Reportar**
+Usa el formato convencional:
 
-1. **Verifica** que el bug no esté ya reportado
-2. **Prueba** con la última versión
-3. **Reproduce** el problema paso a paso
-4. **Incluye** información del sistema
+```
+type(scope): description
 
-### **Template de Bug Report**
+feat: agregar nueva funcionalidad de logging
+fix: corregir detección de ventanas
+docs: actualizar README
+test: agregar tests para nueva función
+```
+
+## 🧪 Testing
+
+### Pruebas Requeridas
+
+Antes de hacer commit, ejecuta:
+
+```powershell
+# 1. Probar apertura de Project Test
+.\chatgpt_web_automation.ps1 -Command open
+
+# 2. Probar pregunta simple
+.\chatgpt_web_automation.ps1 -Command ask -Question "test"
+
+# 3. Probar generación de código
+.\chatgpt_web_automation.ps1 -Command code -Question "función simple"
+
+# 4. Verificar archivos generados
+Get-ChildItem output/
+```
+
+### Checklist de Testing
+
+- [ ] Script se ejecuta sin errores
+- [ ] Project Test se abre correctamente
+- [ ] Preguntas se envían y reciben respuestas
+- [ ] Archivos se generan en carpeta output
+- [ ] Logs se crean correctamente
+- [ ] Configuración JSON se lee sin problemas
+
+## 📋 Reportar Issues
+
+### Template para Bug Reports
 
 ```markdown
-## 🐛 Descripción del Bug
+## 🐛 Bug Report
+
+### Descripción
+Descripción clara del problema.
 
 ### Pasos para Reproducir
-1. Ejecutar `.\monitor.ps1`
-2. Seleccionar opción X
-3. Ver error Y
+1. Ejecutar comando X
+2. Hacer acción Y
+3. Ver error Z
 
 ### Comportamiento Esperado
-- Debería hacer Z
+Lo que debería pasar.
 
 ### Comportamiento Actual
-- Hace W en su lugar
+Lo que realmente pasa.
 
 ### Información del Sistema
-- OS: Windows 10/11
-- PowerShell: 7.x
-- Compilador: MinGW-w64
-- Versión del proyecto: X.Y.Z
+- Windows: [versión]
+- PowerShell: [versión]
+- Chrome: [versión]
+- Cursor AI: [versión]
 
-### Logs/Errores
+### Logs
 ```
-Error específico aquí
+[Pegar contenido de output/debug.log]
 ```
 
 ### Screenshots
 [Si aplica]
 ```
 
-## 🚀 Solicitar Features
-
-### **Template de Feature Request**
+### Template para Feature Requests
 
 ```markdown
-## 🚀 Nueva Funcionalidad
+## 💡 Feature Request
 
 ### Descripción
-Explicar qué funcionalidad se necesita
+Descripción clara de la nueva funcionalidad.
 
 ### Caso de Uso
-Cómo se usaría en la práctica
+Cómo se usaría esta funcionalidad.
 
 ### Alternativas Consideradas
-Otras opciones evaluadas
+Otras opciones que consideraste.
 
 ### Información Adicional
-Contexto adicional relevante
+Cualquier contexto adicional.
 ```
 
-## 📞 Contacto
+## 🏷️ Etiquetas de Issues
 
-- **Issues**: Usa GitHub Issues para bugs y features
-- **Discussions**: Para preguntas y discusiones generales
-- **Wiki**: Para documentación adicional
+- `bug` - Error en el código
+- `enhancement` - Nueva funcionalidad
+- `documentation` - Mejoras en documentación
+- `good first issue` - Bueno para principiantes
+- `help wanted` - Necesita ayuda
+- `question` - Pregunta sobre el proyecto
 
-## 🎉 Reconocimientos
+## 📚 Recursos
 
-- **Contribuidores** serán mencionados en el README
-- **Pull Requests** destacados serán promocionados
-- **Bugs críticos** serán atendidos prioritariamente
+### Documentación
+
+- [README.md](README.md) - Documentación principal
+- [CHANGELOG.md](CHANGELOG.md) - Historial de cambios
+- [config.json](config.json) - Configuración del sistema
+
+### Comunidad
+
+- **Discord:** [Enlace al servidor]
+- **Telegram:** [Enlace al canal]
+- **Email:** soporte@proyecto.com
+
+## 🎯 Roadmap
+
+### Próximas Funcionalidades
+
+- [ ] Integración con APIs de OpenAI
+- [ ] Dashboard web para monitoreo
+- [ ] Sistema de plugins
+- [ ] Soporte multi-navegador
+- [ ] Integración con CI/CD
+
+### Áreas de Mejora
+
+- [ ] Optimización de rendimiento
+- [ ] Mejoras en detección de ventanas
+- [ ] Sistema de logging avanzado
+- [ ] Configuración más flexible
+
+## 🙏 Agradecimientos
+
+Gracias a todos los contribuidores que han ayudado a hacer este proyecto mejor:
+
+- [Lista de contribuidores]
 
 ---
 
-**¡Gracias por contribuir al ecosistema de Cursor AI!** 🚀
+**¡Gracias por contribuir a hacer este proyecto mejor para la comunidad de Cursor AI!** 🚀 
