@@ -118,7 +118,7 @@
 				"gpuAcceleration": "on",
 				"rendererType": "canvas",
 				"shell": {
-					"windows": "C:\\Program Files\\PowerShell\\7\\pwsh.exe"
+					                "windows": "powershell.exe"
 				},
 				"defaultProfile": {
 					"windows": "PowerShell"

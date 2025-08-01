@@ -89,3 +89,70 @@ docs/_build/
 *.img
 *.vhd
 *.vmdk
+
+# Personal information and sensitive data
+*.key
+*.pem
+*.p12
+*.pfx
+*.crt
+*.cer
+*.der
+*.env
+*.env.local
+*.env.*.local
+secrets.txt
+config.local.json
+credentials.json
+token.txt
+api_key.txt
+password.txt
+
+# User-specific paths
+C:/Users/*/
+%USERPROFILE%/
+$HOME/
+
+# Temporary user files
+*.tmp
+*.temp
+*.bak
+*.backup
+*~
+desktop.ini
+
+# IDE user-specific files
+.vscode/settings.json.user
+.vscode/launch.json.user
+*.vcxproj.user
+*.vcxproj.filters.user
+
+# Logs that might contain personal info
+*.log
+logs/
+debug.log
+error.log
+access.log
+
+# Database files
+*.db
+*.sqlite
+*.sqlite3
+
+# Cache and temporary directories
+cache/
+temp/
+tmp/
+.tmp/
+.cache/
+
+# Backup directories
+backup/
+backups/
+*.backup/
+
+# Personal notes and drafts
+notes.txt
+draft.txt
+todo.txt
+personal.txt

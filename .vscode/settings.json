@@ -39,7 +39,7 @@
 	"terminal.integrated.maximumLinks": 100,
 	"terminal.integrated.gpuAcceleration": "on",
 	"terminal.integrated.rendererType": "canvas",
-	"terminal.integrated.shell.windows": "C:\\Program Files\\PowerShell\\7\\pwsh.exe",
+	        "terminal.integrated.shell.windows": "powershell.exe",
 	"terminal.integrated.defaultProfile.windows": "PowerShell",
 	"terminal.integrated.profiles.windows": {
 		"PowerShell": {
