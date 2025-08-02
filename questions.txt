@@ -1,0 +1,20 @@
+Write a Python function to calculate fibonacci numbers
+How to create a React component with TypeScript?
+Explain the difference between let, const, and var in JavaScript
+Write a SQL query to find duplicate records
+How to implement authentication in Node.js?
+Create a CSS grid layout for a responsive website
+Write a function to validate email addresses in Python
+How to use async/await in JavaScript?
+Explain the concept of closures in programming
+Write a recursive function to traverse a binary tree
+How to create a REST API with Express.js?
+Write a Python script to scrape web data
+How to implement JWT authentication?
+Create a responsive navigation menu with CSS
+Write a function to sort an array in JavaScript
+How to use Docker with Node.js applications?
+Explain the concept of promises in JavaScript
+Write a Python class for handling database connections
+How to create a modal dialog with HTML/CSS/JS?
+Write a function to check if a string is a palindrome 

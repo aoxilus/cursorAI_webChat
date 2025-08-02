@@ -1,0 +1,5 @@
+[33m11d547b[m[33m ([m[1;36mHEAD[m[33m -> [m[1;32mmain[m[33m, [m[1;31morigin/main[m[33m, [m[1;31morigin/HEAD[m[33m)[m Fix PowerShell script and add VS Code configuration to prevent terminal hangs
+[33m7f66d87[m feat: v1.0.0 - ChatGPT Web Automation para Cursor AI - Project Test integration completa
+[33md821b40[m security: mejorar .gitignore y limpiar rutas personales
+[33m8d1c1af[m docs: agregar script de comandos para GitHub
+[33mac841bc[m[33m ([m[1;33mtag: [m[1;33mv2.0.0[m[33m)[m feat: versión inicial del sistema de monitoreo para Cursor AI

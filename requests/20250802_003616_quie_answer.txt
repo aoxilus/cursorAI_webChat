@@ -1,0 +1,13 @@
+=== CHATGPT WEB AUTOMATION ENGINE ===
+ChatGPT Web Automation
+Project Test by OpenAI
+
+Configuration loaded successfully
+Asking ChatGPT...
+Question: quien
+Searching for Project Test window...
+Project Test found: ChatGPT - Project Test - Google Chrome
+Question sent and response received
+Response:
+Simulated response for: quien
+Simulated response for: quien
