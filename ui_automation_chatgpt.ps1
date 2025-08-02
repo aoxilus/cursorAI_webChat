@@ -120,22 +120,55 @@ function Extract-Response {
     
     try {
         # Wait for response
-        Start-Sleep -Seconds 15
+        Start-Sleep -Seconds 20
         
-        # Select all (Ctrl+A) and copy (Ctrl+C)
-        Add-Type -AssemblyName System.Windows.Forms
-        [System.Windows.Forms.SendKeys]::SendWait("^a")
-        Start-Sleep -Milliseconds 500
-        [System.Windows.Forms.SendKeys]::SendWait("^c")
-        Start-Sleep -Milliseconds 500
-        
-        $response = Get-Clipboard
-        if ($response -and $response.Length -gt 50) {
-            Write-Host "Response extracted successfully" -ForegroundColor Green
-            return $response
+        # Try multiple extraction methods
+        for ($attempt = 1; $attempt -le 3; $attempt++) {
+            Write-Host "Extraction attempt $attempt..." -ForegroundColor Gray
+            
+            # Method 1: Select all and copy
+            Add-Type -AssemblyName System.Windows.Forms
+            [System.Windows.Forms.SendKeys]::SendWait("^a")
+            Start-Sleep -Milliseconds 1000
+            [System.Windows.Forms.SendKeys]::SendWait("^c")
+            Start-Sleep -Milliseconds 1000
+            
+            $response = Get-Clipboard
+            if ($response -and $response.Length -gt 100) {
+                Write-Host "Response extracted successfully (attempt $attempt)" -ForegroundColor Green
+                return $response
+            }
+            
+            # Method 2: Try clicking in the response area first
+            if ($attempt -eq 2) {
+                Write-Host "Trying to click in response area..." -ForegroundColor Gray
+                [System.Windows.Forms.SendKeys]::SendWait("{TAB}")
+                Start-Sleep -Milliseconds 500
+                [System.Windows.Forms.SendKeys]::SendWait("{DOWN}")
+                Start-Sleep -Milliseconds 500
+            }
+            
+            # Method 3: Try different selection
+            if ($attempt -eq 3) {
+                Write-Host "Trying alternative selection..." -ForegroundColor Gray
+                [System.Windows.Forms.SendKeys]::SendWait("{END}")
+                Start-Sleep -Milliseconds 500
+                [System.Windows.Forms.SendKeys]::SendWait("^a")
+                Start-Sleep -Milliseconds 1000
+                [System.Windows.Forms.SendKeys]::SendWait("^c")
+                Start-Sleep -Milliseconds 1000
+                
+                $response = Get-Clipboard
+                if ($response -and $response.Length -gt 100) {
+                    Write-Host "Response extracted successfully (attempt $attempt)" -ForegroundColor Green
+                    return $response
+                }
+            }
+            
+            Start-Sleep -Seconds 5
         }
         
-        Write-Host "No response found" -ForegroundColor Red
+        Write-Host "No response found after 3 attempts" -ForegroundColor Red
         return ""
     }
     catch {
