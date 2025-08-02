@@ -47,6 +47,31 @@ function Get-RandomDelay {
     return $totalSeconds
 }
 
+# Clean old request files
+function Clean-OldRequests {
+    $outputDir = "requests"
+    $maxFiles = 50
+    
+    if (Test-Path $outputDir) {
+        # Get all files and sort by creation time (newest first)
+        $allFiles = Get-ChildItem -Path $outputDir -File | Sort-Object CreationTime -Descending
+        
+        if ($allFiles.Count -gt $maxFiles) {
+            $filesToDelete = $allFiles | Select-Object -Skip $maxFiles
+            $deletedCount = 0
+            
+            foreach ($file in $filesToDelete) {
+                Remove-Item $file.FullName -Force
+                $deletedCount++
+            }
+            
+            if ($deletedCount -gt 0) {
+                Write-Host "Cleaned $deletedCount old files (keeping last $maxFiles)" -ForegroundColor Yellow
+            }
+        }
+    }
+}
+
 # Main automation loop
 function Start-Automation {
     param([array]$Questions, [int]$MaxCount)
@@ -54,6 +79,7 @@ function Start-Automation {
     Write-Host "=== AUTOMATED CHATGPT WEB AUTOMATION ===" -ForegroundColor Cyan
     Write-Host "Starting automation with $MaxCount questions max" -ForegroundColor Yellow
     Write-Host "Random timing: 1-5 minutes between questions" -ForegroundColor Yellow
+    Write-Host "Auto-clean: keeping last 50 request files" -ForegroundColor Yellow
     
     $questionCount = 0
     

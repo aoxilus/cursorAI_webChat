@@ -199,6 +199,34 @@ function Save-Response {
     Write-Host "Files saved:" -ForegroundColor Green
     Write-Host "  - $questionFile" -ForegroundColor Cyan
     Write-Host "  - $responseFile" -ForegroundColor Cyan
+    
+    # Clean old files (keep only last 50 pairs)
+    Clean-OldRequests
+}
+
+# Clean old request files
+function Clean-OldRequests {
+    $outputDir = "requests"
+    $maxFiles = 50
+    
+    if (Test-Path $outputDir) {
+        # Get all files and sort by creation time (newest first)
+        $allFiles = Get-ChildItem -Path $outputDir -File | Sort-Object CreationTime -Descending
+        
+        if ($allFiles.Count -gt $maxFiles) {
+            $filesToDelete = $allFiles | Select-Object -Skip $maxFiles
+            $deletedCount = 0
+            
+            foreach ($file in $filesToDelete) {
+                Remove-Item $file.FullName -Force
+                $deletedCount++
+            }
+            
+            if ($deletedCount -gt 0) {
+                Write-Host "Cleaned $deletedCount old files (keeping last $maxFiles)" -ForegroundColor Yellow
+            }
+        }
+    }
 }
 
 # Main function
