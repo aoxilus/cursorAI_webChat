@@ -1,0 +1,23 @@
+{
+    "version": "0.2.0",
+    "configurations": [
+        {
+            "name": "PowerShell Script",
+            "type": "PowerShell",
+            "request": "launch",
+            "script": "${workspaceFolder}/chatgpt_web_automation.ps1",
+            "args": ["-Command", "open"],
+            "cwd": "${workspaceFolder}",
+            "console": "integratedTerminal"
+        },
+        {
+            "name": "PowerShell Ask",
+            "type": "PowerShell",
+            "request": "launch",
+            "script": "${workspaceFolder}/chatgpt_web_automation.ps1",
+            "args": ["-Command", "ask", "-Question", "test question"],
+            "cwd": "${workspaceFolder}",
+            "console": "integratedTerminal"
+        }
+    ]
+} 

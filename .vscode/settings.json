@@ -1,0 +1,27 @@
+{
+    "terminal.integrated.defaultProfile.windows": "PowerShell",
+    "terminal.integrated.profiles.windows": {
+        "PowerShell": {
+            "source": "PowerShell",
+            "args": ["-NoExit", "-Command", "cd '${workspaceFolder}'"],
+            "icon": "terminal-powershell"
+        },
+        "Command Prompt": {
+            "path": "cmd.exe",
+            "args": ["/k", "cd /d ${workspaceFolder}"],
+            "icon": "terminal-cmd"
+        }
+    },
+    "terminal.integrated.env.windows": {
+        "POWERSHELL_TELEMETRY_OPTOUT": "1"
+    },
+    "terminal.integrated.shellArgs.windows": [
+        "-NoExit",
+        "-Command",
+        "cd '${workspaceFolder}'"
+    ],
+    "powershell.integratedConsole.showOnStartup": false,
+    "terminal.integrated.persistentSessionReviveProcess": "never",
+    "terminal.integrated.enablePersistentSessions": false,
+    "terminal.integrated.shellIntegration.enabled": false
+} 
